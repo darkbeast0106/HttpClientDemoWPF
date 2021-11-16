@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,10 +19,13 @@ namespace HttpClientGrafikus
             this.modell = modell;
             this.uzembehelyezes = uzembehelyezes;
         }
-
+        [JsonProperty("id")]
         public int Id { get => id; set => id = value; }
+        [JsonProperty("gyarto")]
         public string Gyarto { get => gyarto; set => gyarto = value; }
+        [JsonProperty("modell")]
         public string Modell { get => modell; set => modell = value; }
+        [JsonProperty("uzembehelyezes")]
         public int Uzembehelyezes { get => uzembehelyezes; set => uzembehelyezes = value; }
 
         public override string ToString()
