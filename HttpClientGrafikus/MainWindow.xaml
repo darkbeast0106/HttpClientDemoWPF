@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HttpClientGrafikus"
         mc:Ignorable="d"
-        Title="Autók" Height="450" Width="800">
+        Title="Autók" Height="450" Width="800" MinWidth="600" MinHeight="300">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -17,8 +17,8 @@
         <GroupBox x:Name="groupBox" Grid.Row="0" Grid.Column="1"  Header="Új autó hozzáadása" Padding="5">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30px" />
@@ -36,7 +36,7 @@
                 <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Üzembehelyezés"/>
                 <TextBox Grid.Row="2" Grid.Column="1" x:Name="textBoxUzembehelyezes" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="" TextWrapping="Wrap" PreviewTextInput="textBoxUzembehelyezes_PreviewTextInput" />
 
-                <Button Grid.Row="3" Grid.Column="1" x:Name="buttonHozzaad" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Hozzáad" Click="buttonHozzaad_Click"/>
+                <Button Grid.Row="3" Grid.Column="1" x:Name="buttonHozzaad" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="Hozzáad" Click="buttonHozzaad_Click"/>
             </Grid>
 
         </GroupBox>
