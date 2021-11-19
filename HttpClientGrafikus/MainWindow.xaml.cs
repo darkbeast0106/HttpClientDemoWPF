@@ -80,14 +80,13 @@ namespace HttpClientGrafikus
             }
             Auto auto = new Auto(gyarto, modell, uzembehelyezes);
             buttonHozzaad.IsEnabled = false;
-            RogzitAsync(auto);
+            RogzitAsyncJson(auto);
         }
 
-        private async Task RogzitAsync(Auto auto)
+        private async Task RogzitAsyncJson(Auto auto)
         {
             using (HttpClient client = new HttpClient())
             {
-
                 var json = JsonConvert.SerializeObject(auto);
                 var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
                 var result = await client.PostAsync(url + "felvesz", stringContent);
@@ -102,7 +101,6 @@ namespace HttpClientGrafikus
         {
             using (HttpClient client = new HttpClient())
             {
-
                 var data = new FormUrlEncodedContent(new[]
                 {
                     new KeyValuePair<string, string>("gyarto", auto.Gyarto),
