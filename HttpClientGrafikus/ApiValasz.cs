@@ -4,13 +4,13 @@ using System.Text;
 
 namespace HttpClientGrafikus
 {
-    class Valasz<T>
+    class ApiValasz<T>
     {
         bool error;
         string uzenet;
         List<T> adatok;
 
-        public Valasz(bool error, string uzenet, List<T> adatok)
+        public ApiValasz(bool error, string uzenet, List<T> adatok)
         {
             this.error = error;
             this.uzenet = uzenet;

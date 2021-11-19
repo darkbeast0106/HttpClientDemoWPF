@@ -36,13 +36,13 @@ namespace HttpClientGrafikus
             using (HttpClient client = new HttpClient())
             {
                 string content = await client.GetStringAsync(url + "listaz");
-                Valasz<Auto> valasz = JsonConvert.DeserializeObject<Valasz<Auto>>(content);
+                ApiValasz<Auto> valasz = JsonConvert.DeserializeObject<ApiValasz<Auto>>(content);
                 // http://www.newtonsoft.com/json/help/html/SerializingJSON.htm
                 Feltolt(valasz);
             }
         }
 
-        private void Feltolt(Valasz<Auto> valasz)
+        private void Feltolt(ApiValasz<Auto> valasz)
         {
             if (valasz == null)
             {
@@ -93,7 +93,7 @@ namespace HttpClientGrafikus
                 var result = await client.PostAsync(url + "felvesz", stringContent);
 
                 string content = result.Content.ReadAsStringAsync().Result;
-                Valasz<Auto> valasz = JsonConvert.DeserializeObject<Valasz<Auto>>(content);
+                ApiValasz<Auto> valasz = JsonConvert.DeserializeObject<ApiValasz<Auto>>(content);
                 buttonHozzaad.IsEnabled = true;
                 Feltolt(valasz);
             }
@@ -112,7 +112,7 @@ namespace HttpClientGrafikus
                 var result = await client.PostAsync(url + "felvesz", data);
 
                 string content = result.Content.ReadAsStringAsync().Result;
-                Valasz<Auto> valasz = JsonConvert.DeserializeObject<Valasz<Auto>>(content);
+                ApiValasz<Auto> valasz = JsonConvert.DeserializeObject<ApiValasz<Auto>>(content);
                 buttonHozzaad.IsEnabled = true;
                 Feltolt(valasz);
             }
